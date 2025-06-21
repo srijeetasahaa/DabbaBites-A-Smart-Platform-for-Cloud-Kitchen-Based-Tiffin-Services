@@ -1,0 +1,363 @@
+/* Base Styles */
+.review-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #fff9f8 0%, #fff0ee 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.review-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80') center/cover;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.review-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-left: 10rem;
+}
+
+.section-subtitle {
+  text-align: center;
+ margin-right: 5px;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+/* Review Form - Glass Card */
+.review-form {
+  padding: 30px;
+  margin-bottom: 50px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.review-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.rating-input {
+  display: flex;
+  gap: 8px;
+}
+
+.star {
+  font-size: 28px;
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.star:hover, .star.filled {
+  color: #FF9F1C;
+  transform: scale(1.2);
+}
+
+.review-form textarea {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  border-radius: 12px;
+  min-height: 150px;
+  margin-bottom: 20px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.review-form textarea:focus {
+  outline: none;
+  background: white;
+  box-shadow: 0 0 0 2px rgba(255, 99, 71, 0.3);
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upload-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+  color: #555;
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.9);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.upload-btn:hover {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-btn:hover::after {
+  left: 0;
+}
+
+.upload-btn .icon {
+  font-size: 1.2rem;
+}
+
+.image-preview {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.submit-btn {
+  padding: 12px 24px;
+  background-color: #FF9F1C;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #e07a00;
+}
+
+/* Reviews Grid - Horizontal Scrolling */
+.reviews-grid {
+  display: flex;
+  gap: 30px;
+  margin-top: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.reviews-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.reviews-grid::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.review-card {
+  min-width: 360px; /* Ensures cards stay side by side */
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+.review-card .user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.review-card .user-profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-card .user-info {
+  margin-left: 15px;
+}
+
+.review-card .user-info h4 {
+  margin: 0;
+  color: #333;
+}
+
+.review-card .user-rating {
+  font-size: 1rem;
+  color: #555;
+}
+
+.review-card .review-content p {
+  margin-top: 10px;
+  color: #333;
+}
+
+.food-images {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.food-images img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+    margin-left: 0;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .review-form {
+    padding: 20px;
+  }
+
+  .form-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-header h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .rating-input {
+    justify-content: flex-start;
+  }
+
+  .review-form textarea {
+    font-size: 0.95rem;
+    min-height: 120px;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .upload-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .reviews-grid {
+    gap: 20px;
+  }
+
+  .review-card {
+    min-width: 300px;
+  }
+
+  .food-images img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Mobile First Layout */
+@media (max-width: 480px) {
+  .review-section {
+    padding: 50px 0;
+  }
+
+  .review-form {
+    padding: 15px;
+  }
+
+  .form-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .review-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .review-card {
+    min-width: 280px;
+  }
+
+  .review-card .user-profile img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .review-card .user-info h4 {
+    font-size: 1rem;
+  }
+
+  .food-images img {
+    width: 70px;
+    height: 70px;
+  }
+}

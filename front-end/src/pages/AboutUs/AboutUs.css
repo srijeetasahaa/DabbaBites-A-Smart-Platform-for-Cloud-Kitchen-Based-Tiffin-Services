@@ -1,0 +1,64 @@
+/* Page heading style */
+h1 {
+  font-size: 2.5rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+/* Container styling */
+.about-us-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* Section heading inside the container */
+.about-us-container h1 {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+/* List styling */
+.about-us-container ul {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+/* List items spacing */
+.about-us-container li {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+/* Paragraphs inside container */
+.about-us-container p {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .about-us-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .about-us-container h1 {
+    font-size: 2rem;
+  }
+
+  .about-us-container p,
+  .about-us-container li {
+    font-size: 1rem;
+  }
+}

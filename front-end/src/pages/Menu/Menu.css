@@ -1,0 +1,225 @@
+/* === Restaurant Menu - Zomato/Swiggy Inspired === */
+
+.restaurant-display {
+  padding: 3rem 0;
+  background: #f5f5f5;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.75rem);
+  font-weight: 700;
+  color: #1e272e;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: #ff4d4d;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  color: #666;
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+}
+
+/* Grid Layout */
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.75rem;
+}
+
+/* Card Styles */
+.restaurant-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: var(--delay);
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+/* Image Block */
+.card-image {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.restaurant-card:hover .card-image img {
+  transform: scale(1.06);
+}
+
+/* Rating Badge */
+.rating-container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  backdrop-filter: blur(3px);
+  font-weight: 600;
+}
+
+.rating-container.high {
+  background: #27ae60;
+}
+.rating-container.medium {
+  background: #f39c12;
+}
+.rating-container.low {
+  background: #e74c3c;
+}
+
+.star-icon {
+  color: #ffd700;
+}
+
+/* Content Section */
+.card-content {
+  padding: 1.25rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.restaurant-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2f3542;
+  margin-bottom: 0.5rem;
+}
+
+.restaurant-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delivery-time {
+  font-size: 0.9rem;
+  color: #747d8c;
+  display: flex;
+  align-items: center;
+}
+
+.category-tag {
+  background: #f1f2f6;
+  color: #2d3436;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Review Count */
+.review-count {
+  font-size: 0.75rem;
+  color: #eee;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading Spinner */
+.loading-state {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #ddd;
+  border-top-color: #ff4d4d;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .restaurant-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .card-image {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-display {
+    padding: 2rem 1rem;
+  }
+
+  .restaurant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+}
