@@ -17,7 +17,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 const stripeClient = stripe(process.env.STRIPE_SECRET_KEY);
 
 // CORS Configuration
